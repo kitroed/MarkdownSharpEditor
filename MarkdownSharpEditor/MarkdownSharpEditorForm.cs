@@ -49,5 +49,10 @@ namespace MarkdownEditor
                 mainSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             }
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
