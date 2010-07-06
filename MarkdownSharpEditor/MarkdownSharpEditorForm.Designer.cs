@@ -35,12 +35,12 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alternateHorizontalVerticalLayoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.inputRichTextBox = new System.Windows.Forms.RichTextBox();
             this.outputTabControl = new System.Windows.Forms.TabControl();
             this.htmlOutputTabPage = new System.Windows.Forms.TabPage();
             this.outputWebBrowser = new System.Windows.Forms.WebBrowser();
             this.rawOutputTabPage = new System.Windows.Forms.TabPage();
             this.outputRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.inputTextBox = new System.Windows.Forms.TextBox();
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
@@ -75,14 +75,14 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -91,13 +91,13 @@
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alternateHorizontalVerticalLayoutToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // alternateHorizontalVerticalLayoutToolStripMenuItem
             // 
             this.alternateHorizontalVerticalLayoutToolStripMenuItem.Name = "alternateHorizontalVerticalLayoutToolStripMenuItem";
-            this.alternateHorizontalVerticalLayoutToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
+            this.alternateHorizontalVerticalLayoutToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.alternateHorizontalVerticalLayoutToolStripMenuItem.Text = "Alternate Horizontal/Vertical Layout";
             this.alternateHorizontalVerticalLayoutToolStripMenuItem.Click += new System.EventHandler(this.alternateHorizontalVerticalLayoutToolStripMenuItem_Click);
             // 
@@ -110,7 +110,7 @@
             // 
             // mainSplitContainer.Panel1
             // 
-            this.mainSplitContainer.Panel1.Controls.Add(this.inputRichTextBox);
+            this.mainSplitContainer.Panel1.Controls.Add(this.inputTextBox);
             // 
             // mainSplitContainer.Panel2
             // 
@@ -118,20 +118,6 @@
             this.mainSplitContainer.Size = new System.Drawing.Size(603, 670);
             this.mainSplitContainer.SplitterDistance = 371;
             this.mainSplitContainer.TabIndex = 2;
-            // 
-            // inputRichTextBox
-            // 
-            this.inputRichTextBox.AcceptsTab = true;
-            this.inputRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputRichTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputRichTextBox.Location = new System.Drawing.Point(3, 3);
-            this.inputRichTextBox.Name = "inputRichTextBox";
-            this.inputRichTextBox.Size = new System.Drawing.Size(597, 365);
-            this.inputRichTextBox.TabIndex = 0;
-            this.inputRichTextBox.Text = "";
-            this.inputRichTextBox.TextChanged += new System.EventHandler(this.inputRichTextBox_TextChanged);
             // 
             // outputTabControl
             // 
@@ -194,6 +180,23 @@
             this.outputRichTextBox.TabIndex = 0;
             this.outputRichTextBox.Text = "";
             // 
+            // inputTextBox
+            // 
+            this.inputTextBox.AcceptsReturn = true;
+            this.inputTextBox.AcceptsTab = true;
+            this.inputTextBox.AllowDrop = true;
+            this.inputTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputTextBox.Location = new System.Drawing.Point(0, 0);
+            this.inputTextBox.Multiline = true;
+            this.inputTextBox.Name = "inputTextBox";
+            this.inputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.inputTextBox.Size = new System.Drawing.Size(603, 368);
+            this.inputTextBox.TabIndex = 0;
+            this.inputTextBox.TextChanged += new System.EventHandler(this.inputTextBox_TextChanged);
+            // 
             // MarkdownSharpEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +211,7 @@
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             this.mainSplitContainer.Panel1.ResumeLayout(false);
+            this.mainSplitContainer.Panel1.PerformLayout();
             this.mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
             this.mainSplitContainer.ResumeLayout(false);
@@ -226,7 +230,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.SplitContainer mainSplitContainer;
-        private System.Windows.Forms.RichTextBox inputRichTextBox;
         private System.Windows.Forms.RichTextBox outputRichTextBox;
         private System.Windows.Forms.WebBrowser outputWebBrowser;
         private System.Windows.Forms.TabControl outputTabControl;
@@ -234,6 +237,7 @@
         private System.Windows.Forms.TabPage rawOutputTabPage;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alternateHorizontalVerticalLayoutToolStripMenuItem;
+        private System.Windows.Forms.TextBox inputTextBox;
     }
 }
 

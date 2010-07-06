@@ -22,11 +22,11 @@ namespace MarkdownEditor
             markdown.StrictBoldItalic = true;            
         }
 
-        private void inputRichTextBox_TextChanged(object sender, EventArgs e)
+        private void inputTextBox_TextChanged(object sender, EventArgs e)
         {
             Debug.Assert(markdown != null);
 
-            string outputHtml = markdown.Transform(inputRichTextBox.Text);
+            string outputHtml = markdown.Transform(inputTextBox.Text);
 
             outputWebBrowser.DocumentText = outputHtml;
             outputRichTextBox.Text = outputHtml;
