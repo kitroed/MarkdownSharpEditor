@@ -107,5 +107,13 @@ namespace MarkdownEditor
                 File.WriteAllText(filePath, inputTextBox.Text);
             }
         }
+
+        private void reloadDocumentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (filePath != null)
+            {
+                inputTextBox.Text = File.ReadAllText(filePath);
+            }
+        }
     }
 }
